@@ -1,6 +1,14 @@
-import { WebSocketServer } from "ws"; 
-
-const server= new WebSocketServer();
+import { WebSocketServer } from "ws";  
+import mongoose from "mongoose";  
+import {WorkspaceModel } from "db/index"
+mongoose.connect(process.env.DB_URL! ); 
+const server= new WebSocketServer({port : 8080 });
 server.on("connection", (ws) => {
-  
-})
+  ws.on("message", (msg) => {
+    console.log(msg);      
+    WorkspaceModel.create({
+      path: "123", 
+      name:"123123"
+    })
+  })
+}) 

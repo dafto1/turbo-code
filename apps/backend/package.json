@@ -10,8 +10,9 @@
     "typescript": "^5"
   },
   "dependencies": {
-    "db" : "*",
     "@types/ws": "^8.18.1",
+    "db": "*",
+    "mongoose": "^8",
     "ws": "^8.21.3"
   }
 }
